@@ -7,7 +7,7 @@ import { mapTo } from 'rxjs/operators';
 })
 export class SessionDataService {
 
-  login(credentials: any) {
-    return timer(300).pipe(mapTo({ token: 'token', name: 'Brendo Gomes' }));
-  }
+  login(credentials: any) { 
+    return timer(300).pipe(mapTo({ token: 'DSGDSVE18R', name: 'Brendo Gomes', role: 'admin' }));
+  } 
 }

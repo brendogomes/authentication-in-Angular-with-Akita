@@ -1,0 +1,29 @@
+#container {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    h1 {
+        color: rgb(26, 32, 44);
+    }
+
+    button {
+        background-color: rgb(206, 219, 235);
+        margin-top: 10px;
+        width: 300px;
+        height: 45px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+    } 
+
+    button:hover {
+    background-color: rgb(0, 119, 255);
+    color: white;
+    } 
+}

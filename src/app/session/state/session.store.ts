@@ -5,12 +5,14 @@ import * as storage from '../storage';
 export type SessionState = {
   token: string;
   name: string;
+  role: string;
 };
 
 export function createInitialSessionState(): SessionState {
   return {
     token: null,
     name: null,
+    role: null,
     ...storage.getSession(),
   };
 }
@@ -24,6 +26,11 @@ export class SessionStore extends Store<SessionState> {
 
   login(session: SessionState) {
     this.update(session);
+    storage.saveSession(session);
+  }
+
+  atualiza(session: SessionState) {
+    this.update(session); 
     storage.saveSession(session);
   }
 

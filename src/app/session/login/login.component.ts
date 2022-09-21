@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  submit() {
+  login(): void {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('home'); 
       });
     }
   }

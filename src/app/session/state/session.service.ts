@@ -13,7 +13,7 @@ export class SessionService {
 		return this.authDataService.login(credentials).pipe(tap((session) => this.authStore.login(session)));
 	}
 
-	logout() {
+	logout() { 
 		this.authStore.logout();
 	}
 }
