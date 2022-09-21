@@ -1,3 +1,4 @@
+import { SessionQuery } from './../session/state/session.query';
 import { SessionStore, SessionState } from './../session/state/session.store';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -5,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'], 
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   stateUserInfo: SessionState;
@@ -14,11 +15,12 @@ export class HomeComponent implements OnInit {
 
   constructor(
     protected store: SessionStore,
+    protected sessionQuery: SessionQuery
   ) {
     this.stateUser$ = this.store._select((state) => state);
     this.stateUser$.subscribe((state) => {
       this.stateUserInfo = state;
-      console.log(this.stateUserInfo)
+      console.log(this.stateUserInfo);
     });
   }
 
@@ -28,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.store.atualiza({
       token: 'A5415S1V5D',
       name: 'João Alberto',
-      role: 'operador'
+      role: 'operador',
     });
   }
 

@@ -15,6 +15,7 @@ export class SessionQuery extends Query<SessionState> {
 	}
 
 	isLoggedIn() {
+		console.log(this.getValue().token)
 		return toBoolean(this.getValue().token);
 	}
 }
